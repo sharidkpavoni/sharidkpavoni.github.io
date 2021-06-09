@@ -1,0 +1,313 @@
+/* RESET CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* My CSS */
+
+html {
+    background-color: #a5e1ad;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER + NAVBAR */
+
+header {
+    background-color: #21094e;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+navbar, header {
+    color: white;
+}
+
+.navbar {
+    padding:0;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    height: 50px;
+    background-color: #511281;
+    font-weight: 200;
+}
+.navbar li {
+    padding: 0 25px;
+    margin: 0 5px;
+    font-size: 30px;
+    background-color: #511281;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.navbar li:hover {
+    background-color: #7a1dc2;
+}
+
+
+
+/* MAIN CONTAINER */
+
+.main-container{
+    width: 100vw;
+    height: calc(100vh - 110px);
+    background-color: #a5e1ad;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+
+.stack {
+    margin: 40px;
+    height: auto;
+    width: 400px;
+    border-radius: 15px;
+    background-color: #4ca1a3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack-header {
+    padding: 0 15px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    width: 100%;
+    height: 40px;
+    background-color: #2d6061;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stack-routine-btns {
+    position: relative;
+    right: -20px;
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #1b3838;
+}
+
+
+.stack-actions, .stack-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+    color: #1b3838;
+    text-transform: uppercase;
+}
+
+/* SETTING ACTIONS INVISIBLE UNTIL FURTHER DEVELOPMENT */
+.stack-actions {
+    visibility: hidden;
+}
+/* --------------------------------------------------- */
+
+#add-close-btn {
+  margin: 0 15px;  
+}
+
+.stack-close, .stack-edit, #add-close-btn, .routine-confirm, .routine-delete {
+    font-size: 25px;
+ /*    margin: 0 15px; */
+    color: #1b3838;
+    transition: color .3s ease;
+}
+
+.routine-confirm, .routine-delete {
+    padding: 0 15px 0 0;
+    font-size: 20px;
+}
+.stack-close:hover, .stack-edit:hover, .routine-confirm:hover, .routine-delete:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.stack-push, .stack-pop, .stack-close, .stack-edit {
+    margin-right: 15px;
+    transition: color .3s ease;
+}
+.stack-close, .stack-edit {
+    margin-right: 0;
+    margin-left: 15px;
+}
+.stack-push:hover, .stack-pop:hover, #add-close-btn:hover{
+    color: white;
+    cursor: pointer;
+}
+
+/* STACK CONTENT */
+.stack-content{
+    min-height: 65px;
+    display:flex;
+    width: inherit;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.stack-routine{
+    display: flex;
+    flex-direction: row;
+    padding: 1.5em 0;
+    width: inherit;
+    border-top: 1px dashed black;
+    text-align: center;
+}
+.stack-routine:nth-of-type(1) {
+    border-top: none;
+}
+
+.not-assigned, .assigned {
+    padding: 0 15px;
+    min-width: 400px;
+    height: 20px;
+    text-align: center;
+    background-color: transparent;
+    border:none;
+    color: white;
+    animation: blinker 1s linear infinite;
+}
+.assigned {
+    color: black;
+    animation: none;
+}
+.not-assigned:active, .not-assigned:focus {
+    border: none;
+    outline: none;
+    
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+/* ADD STACK */
+
+.stack-add{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.425);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+.stack-add-show {
+    display:inline;
+}
+.stack-add-window {
+    background-color: whitesmoke;
+    margin: 15% auto;
+    width: 400px;
+    height: 200px;
+    z-index: 1;
+    opacity: 1;
+    border-radius: 15px;
+   
+}
+.stack-add-header{
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    width: 400px;
+    height: 40px;
+    background-color: #2d6061;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.stack-add-capacity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-add-content{
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input-capacitate {
+    width: 50px;
+    margin-left: 15px;
+    font-size: 30px;
+}
+.text-capacitate{
+    font-size: 30px;
+    position: relative;
+    bottom: 2px;
+}
+
+#adauga-stiva-btn {
+    background-color: #2D6061;
+}
+#adauga-stiva-btn:focus, #adauga-stiva-btn:active {
+    background-color: #1c3b3b;
+    outline: none !important;
+    box-shadow: none;
+}
